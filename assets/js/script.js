@@ -40,6 +40,14 @@ $(document).ready(function(){
   
 });
 
-$("#navbar-btn-icon").click(function() {
-  $("span.navbar-toggler-icon").toggleClass('clicked');
+$("#navbar-btn-icon").click(function(e) {
+  var menuItem = $(this);
+
+  if (menuItem.attr("aria-expanded") === "true") {
+    $("span.navbar-toggler-icon").addClass('clicked');
+  }
+  else if (menuItem.attr("aria-expanded") === "false") {
+    $("span.navbar-toggler-icon").removeClass('clicked');
+  }
+
 });
